@@ -3,7 +3,12 @@ import Keg from "./Keg";
 
 function KegList(){
   return (
-    <Keg />
+    <Keg 
+      name="Red Eye Rye"
+      brand="Founders"
+      price="5"
+      alcoholContent="7%"
+      pintsLeft="124" />
   );
 }
 
