@@ -11,14 +11,15 @@ function KegDetail(props){
       <p><em>{keg.price}</em></p>
       <p><em>{keg.alcoholContent}</em></p>
       <p><em>{keg.pintsLeft}</em></p>
-      
+      <button onClick={props.onClickingDecriment }>Take a Pint</button>
       <hr/>
     </React.Fragment>
   );
 }
 
 KegDetail.propTypes = {
-  keg: PropTypes.object
+  keg: PropTypes.object,
+  onClickingDecriment: PropTypes.func
 };
 
 

@@ -30,6 +30,8 @@ class KegControl extends React.Component {
 
   handleDecrimentClick = () => {
     this.setState({decriment: true});
+  }
+  
 
   handleAddingNewKegToList = (newKeg) => {
     const newMasterKegList = this.state.masterKegList.concat(newKeg);
@@ -41,7 +43,7 @@ class KegControl extends React.Component {
     const selectedKeg = this.state.masterKegList.filter(ticket =>ticket.id === id)[0];
     this.setState({selectedKeg: selectedKeg});
   }
-}
+
 
   render(){
     let currentlyVisibleState = null;
@@ -69,7 +71,6 @@ class KegControl extends React.Component {
       </React.Fragment>
     );
   }
-
 }
 
 export default KegControl;
