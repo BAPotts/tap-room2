@@ -59,8 +59,13 @@ class KegControl extends React.Component {
     }
     return (
       <React.Fragment>
-        {currentlyVisibleState}
+        {currentlyVisibleState = 
+        <KegDetail
+          keg = {this.state.selectedKeg}
+          onClickingDecriment = {this.handleDecrimentClick} />
+        }
         <button onClick={this.handleClick}>{buttonText}</button>
+        
       </React.Fragment>
     );
   }
