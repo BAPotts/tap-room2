@@ -10,7 +10,8 @@ class KegControl extends React.Component {
     this.state = {
       formVisibleOnPage: false,
       masterKegList: [],
-      selectedTicket: null
+      selectedTicket: null,
+      decriment: false
     };
   }
 
@@ -27,6 +28,9 @@ class KegControl extends React.Component {
     } 
   }
 
+  handleDecrimentClick = () => {
+    this.setState({decriment: true});
+
   handleAddingNewKegToList = (newKeg) => {
     const newMasterKegList = this.state.masterKegList.concat(newKeg);
     this.setState({masterKegList: newMasterKegList,
@@ -37,6 +41,7 @@ class KegControl extends React.Component {
     const selectedKeg = this.state.masterKegList.filter(ticket =>ticket.id === id)[0];
     this.setState({selectedKeg: selectedKeg});
   }
+}
 
   render(){
     let currentlyVisibleState = null;
