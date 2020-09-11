@@ -32,7 +32,7 @@ function NewKegForm(props){
           type="text"
           name="pintsLeft"
           placeholder="Total Pints" />
-        <button type='submit'>Help!</button>
+        <button type='submit'>Add this Keg</button>
       </form>
     </React.Fragment>
   );

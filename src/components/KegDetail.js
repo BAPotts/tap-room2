@@ -16,8 +16,8 @@ function KegDetail(props){
   );
 }
 
-TicketDetail.propTypes = {
-  ticket: PropTypes.object
+KegDetail.propTypes = {
+  keg: PropTypes.object
 };
 
 
