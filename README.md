@@ -4,6 +4,7 @@
 
 *<h2 align ='center'>A tap-room tracker with an updatable list of beers!*
 
+<img src="./public/taproomdiagram.png"/>
 
 <h3 align ='center'>•<a href='#requirements'> Requirements</a> •<a href='#setup'> Setup</a> •<a href='#technologies-used'> Technologies</a> •<a href='#❤️contributors'> Contributors</a> •<a href='#cloning'> Cloning</a></h3>
 
