@@ -19,7 +19,13 @@ class KegControl extends React.Component {
       this.setState({
         selectedKeg: null
       });
-    } 
+    } else {
+      const { dispatch } = this.props;
+      const action = {
+        type: 'TOGGLE_FORM'
+      }
+      dispatch(action);
+    }
   }
 
   handleDecrementingKeg = (kegToDecrement) => {
@@ -53,7 +59,11 @@ class KegControl extends React.Component {
       alcoholContent: alcoholContent,
       pintsLeft: pintsLeft
     }
-    dispatch(action);    
+    dispatch(action); 
+    const action2 = {
+      type: 'TOGGLE_FORM'
+    }
+    dispatch(action2);   
   }
 
   handleChangingSelectedKeg = (id) => {
