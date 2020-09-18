@@ -6,14 +6,16 @@ function KegDetail(props){
 
   function decrementPint(event) {
     event.preventDefault();
-    props.onClickingDecrement({
-      name: keg.name,
-      brand: keg.brand,
-      price: keg.price,
-      alcoholContent: keg.alcoholContent,
-      pintsLeft: keg.pintsLeft -1,
-      id: keg.id
-    });
+    if (keg.pintsLeft!==0){
+      props.onClickingDecrement({
+        name: keg.name,
+        brand: keg.brand,
+        price: keg.price,
+        alcoholContent: keg.alcoholContent,
+        pintsLeft: keg.pintsLeft -1,
+        id: keg.id
+      });
+    }
   }
 
   return (
