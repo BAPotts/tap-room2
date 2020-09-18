@@ -9,7 +9,6 @@ class KegControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      formVisibleOnPage: false,
       selectedTicket: null,
       decriment: false
     };
@@ -18,13 +17,8 @@ class KegControl extends React.Component {
   handleClick = () => {
     if (this.state.selectedKeg != null) {
       this.setState({
-        formVisibleOnPage: false,
         selectedKeg: null
       });
-    } else {      
-      this.setState(prevState => ({
-        formVisibleOnPage: !prevState.formVisibleOnPage
-      }));
     } 
   }
 
@@ -59,8 +53,7 @@ class KegControl extends React.Component {
       alcoholContent: alcoholContent,
       pintsLeft: pintsLeft
     }
-    dispatch(action);
-    this.setState({formVisibleOnPage: false });
+    dispatch(action);    
   }
 
   handleChangingSelectedKeg = (id) => {
