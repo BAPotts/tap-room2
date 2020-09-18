@@ -4,6 +4,10 @@ import PropTypes from "prop-types";
 function KegDetail(props){
   const { keg } = props;
 
+  // function decrementPint(event) {
+  //   event.preventDefault();
+  //   props.
+
   return (
     <React.Fragment>
       <h1>Keg Details</h1>
@@ -11,7 +15,7 @@ function KegDetail(props){
       <p><em>{keg.price}</em></p>
       <p><em>{keg.alcoholContent}</em></p>
       <p><em>{keg.pintsLeft}</em></p>
-      <button onClick={props.onClickingDecriment }>Take a Pint</button>
+      <button onClick={ props.onClickingDecrement }>Take a Pint</button>
       <hr/>
     </React.Fragment>
   );

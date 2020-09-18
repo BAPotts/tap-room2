@@ -28,8 +28,15 @@ class KegControl extends React.Component {
     } 
   }
 
-  handleDecrimentClick = () => {
-    this.setState({decriment: true});
+  handleDecrementingKeg = (kegToDecrement) => {
+    editedKeg = 
+    const newMasterKegList = this.state.masterKegList
+    .filter(keg => keg.id !== this.state.selectedKeg.id)
+    .concat(kegToDecrement)
+    this.setState({
+      masterKegList: newMasterKegList,
+      selectedKeg: null
+    });
   }
   
 
@@ -50,8 +57,11 @@ class KegControl extends React.Component {
     let buttonText = null;
     
     if (this.state.selectedKeg != null) {
-      currentlyVisibleState = <KegDetail keg = {this.state.selectedKeg} />
+      currentlyVisibleState = <KegDetail 
+      keg = {this.state.selectedKeg}
+      onClickingDecrement = {this.handleDecrementingKeg} />
       buttonText = "Return to Keg List";
+      
     }else if (this.state.formVisibleOnPage) {
       currentlyVisibleState = <NewKegForm onNewKegCreation={this.handleAddingNewKegToList} />
       buttonText = "Return to Keg List";
