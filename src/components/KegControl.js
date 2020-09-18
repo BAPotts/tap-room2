@@ -97,7 +97,7 @@ class KegControl extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    masterTicketList: state
+    masterKegList: state
   }
 }
 KegControl = connect(mapStateToProps)(KegControl);
