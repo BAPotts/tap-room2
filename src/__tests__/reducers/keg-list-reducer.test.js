@@ -2,6 +2,20 @@ import kegListReducer from '../../reducers/keg-list-reducer';
 
 describe ('kegListReducer', () => {
 
+  const currentState = {
+    1: { name: "Big Bear Brown Ale",
+    brand: "Cedar Brewing",
+    price: "$7",
+    alcoholContent: "6%",
+    pintsLeft: 99,
+    id: 1},
+    2: { name: 'All Day IPA',
+        brand: "Bell's Brewery",
+        price: "$6",
+        alcoholContent: "7%",
+        pintsLeft: 77,
+        id: 2}
+  }
   let action;
   const kegData = {
     name: "Big Bear Brown Ale",
@@ -39,4 +53,20 @@ describe ('kegListReducer', () => {
       }
     });
   });
-});
+
+  test('Should successfully delete a keg', () =>
+  {
+    action = {
+      type:'DELETE_KEG',
+      id: 1
+    };
+    expect(kegListReducer(currentState, action)).toEqual({
+      2: { name: 'All Day IPA',
+        brand: "Bell's Brewery",
+        price: "$6",
+        alcoholContent: "7%",
+        pintsLeft: 77,
+        id: 2}
+    });
+  })
+})
