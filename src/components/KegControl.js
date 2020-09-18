@@ -29,11 +29,19 @@ class KegControl extends React.Component {
   }
 
   handleDecrementingKeg = (kegToDecrement) => {
-    const newMasterKegList = this.state.masterKegList
-    .filter(keg => keg.id !== this.state.selectedKeg.id)
-    .concat(kegToDecrement)
+    const { dispatch } = this.props;
+    const { id, name, brand, price, alcoholContent, pintsLeft } = kegToDecrement;
+    const action = {
+      type: 'ADD_KEG',
+      id: id,
+      name: name,
+      brand: brand,
+      price: price,
+      alcoholContent: alcoholContent,
+      pintsLeft: pintsLeft,
+    }
+    dispatch(action);
     this.setState({
-      masterKegList: newMasterKegList,
       selectedKeg: null
     });
   }
