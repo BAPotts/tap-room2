@@ -29,7 +29,6 @@ class KegControl extends React.Component {
   }
 
   handleDecrementingKeg = (kegToDecrement) => {
-    editedKeg = 
     const newMasterKegList = this.state.masterKegList
     .filter(keg => keg.id !== this.state.selectedKeg.id)
     .concat(kegToDecrement)
